@@ -30,7 +30,7 @@ public class Aplicacao {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
         dataSource.setUsername("root");
         dataSource.setPassword("q1w2e3r4");
-        dataSource.setUrl("jdbc:mysql://localhost:3306/power");
+        dataSource.setUrl("jdbc:mysql://localhost:3306/power?useSSL=false");
         /**/
         dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 
@@ -39,7 +39,7 @@ public class Aplicacao {
         Properties propriedadesHibernate = new Properties();
         propriedadesHibernate.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         propriedadesHibernate.setProperty("hibernate.show_sql", "true");
-        propriedadesHibernate.setProperty("hibernate.hbm2ddl.auto", "create");
+        propriedadesHibernate.setProperty("hibernate.hbm2ddl.auto", "update");
 
         factoryBean.setJpaProperties(propriedadesHibernate);
 
