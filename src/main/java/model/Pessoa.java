@@ -13,8 +13,10 @@ public class Pessoa {
     @GenericGenerator(name = "UUID", strategy = "uuid2")
     private String id;
 
+    @Column(nullable = false, length = 255)
     private String nome;
 
+    @Column(nullable = false, length = 16)
     private String cpf;
 
     @OneToMany

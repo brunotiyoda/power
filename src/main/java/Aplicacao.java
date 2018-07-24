@@ -39,7 +39,7 @@ public class Aplicacao {
         Properties propriedadesHibernate = new Properties();
         propriedadesHibernate.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
         propriedadesHibernate.setProperty("hibernate.show_sql", "true");
-        propriedadesHibernate.setProperty("hibernate.hbm2ddl.auto", "update");
+        propriedadesHibernate.setProperty("hibernate.hbm2ddl.auto", "create");
 
         factoryBean.setJpaProperties(propriedadesHibernate);
 

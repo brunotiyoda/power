@@ -2,6 +2,7 @@ package model;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -14,16 +15,22 @@ public class Endereco {
     @GenericGenerator(name = "UUID", strategy = "uuid2")
     private String id;
 
+    @Column(nullable = false, length = 11)
     private String cep;
 
+    @Column(nullable = false, length = 255)
     private String logradouro;
 
+    @Column(nullable = false, length = 255)
     private String complemento;
 
+    @Column(nullable = false, length = 100)
     private String bairro;
 
+    @Column(nullable = false, length = 150)
     private String localidade;
 
+    @Column(nullable = false, length = 3)
     private String uf;
 
     private Integer numero;
