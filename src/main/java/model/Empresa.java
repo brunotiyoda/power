@@ -2,9 +2,8 @@ package model;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Empresa {
@@ -18,12 +17,16 @@ public class Empresa {
 
     private String cnpj;
 
-    private Telefone telefone;
+    @OneToMany
+    private List<Telefone> telefones;
 
-    private Email email;
+    @OneToMany
+    private List<Email> emails;
 
-    private Endereco endereco;
+    @OneToMany
+    private List<Endereco> enderecos;
 
+    @OneToOne
     private Usuario usuario;
 
     public String getId() {
@@ -46,28 +49,28 @@ public class Empresa {
         this.cnpj = cnpj;
     }
 
-    public Telefone getTelefone() {
-        return telefone;
+    public List<Telefone> getTelefones() {
+        return telefones;
     }
 
-    public void setTelefone(Telefone telefone) {
-        this.telefone = telefone;
+    public void setTelefones(List<Telefone> telefones) {
+        this.telefones = telefones;
     }
 
-    public Email getEmail() {
-        return email;
+    public List<Email> getEmails() {
+        return emails;
     }
 
-    public void setEmail(Email email) {
-        this.email = email;
+    public void setEmails(List<Email> emails) {
+        this.emails = emails;
     }
 
-    public Endereco getEndereco() {
-        return endereco;
+    public List<Endereco> getEnderecos() {
+        return enderecos;
     }
 
-    public void setEndereco(Endereco endereco) {
-        this.endereco = endereco;
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
     }
 
     public Usuario getUsuario() {
